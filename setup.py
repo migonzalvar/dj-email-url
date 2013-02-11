@@ -64,7 +64,7 @@ setup(
     license='BSD',
     author='Miguel Gonzalez',
     author_email='migonzalvar@gmail.com',
-    description='Use an email URL to configure EMAIL in your Django Application.',
+    description='Use an URL to configure email backend settings in your Django Application.',
     long_description=__doc__,
     py_modules=['dj_email_url'],
     zip_safe=False,
