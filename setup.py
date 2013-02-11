@@ -37,15 +37,15 @@ Supported backends
 
 Currently, it supports:
 
-    - SMTP backend (smtp or smtps),
+- SMTP backend (smtp or smtps),
 
-    - console backend (console),
+- console backend (console),
 
-    - file backend (file),
+- file backend (file),
 
-    - in-memory backend (memory),
+- in-memory backend (memory),
 
-    - and dummy backend (dummy).
+- and dummy backend (dummy).
 
 
 The scheme ``smtps`` indicates to use TLS connections, that is to set

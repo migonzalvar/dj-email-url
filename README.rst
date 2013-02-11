@@ -36,15 +36,15 @@ Supported backends
 
 Currently, it supports:
 
-    - SMTP backend (smtp and smtps),
+- SMTP backend (smtp and smtps),
 
-    - console backend (console),
+- console backend (console),
 
-    - file backend (file),
+- file backend (file),
 
-    - in-memory backend (memory),
+- in-memory backend (memory),
 
-    - and dummy backend (dummy).
+- and dummy backend (dummy).
 
 The scheme ``smtps`` indicates to use TLS connections, that is to set
 ``EMAIL_USE_TLS`` to ``True``.
