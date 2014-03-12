@@ -10,17 +10,30 @@ environments variable to configure the email backend in a Django application.
 Usage
 -----
 
-Configure your email configuration values in ``settings.py`` from
-``EMAIL_URL``::
+Import the package in ``settings.py``:
+
+.. code:: python
+
+    import dj_email_url
+
+
+Fetch your email configuration values. The default option is fetch them from
+``EMAIL_URL`` environment variable:
+
+.. code:: python
 
     email_config = dj_email_url.config()
 
-Parse an arbitrary email URL::
+Other option is parse an arbitrary email URL:
+
+.. code:: python
 
     email_config = dj_email_url.parse('smtp://...')
 
 
-After this, it is necessary to assign values to settings::
+Finally, it is **necessary** to assign values to settings:
+
+.. code:: python
 
     EMAIL_FILE_PATH = email_config['EMAIL_FILE_PATH']
     EMAIL_HOST_USER = email_config['EMAIL_HOST_USER']
