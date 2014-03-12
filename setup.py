@@ -8,7 +8,7 @@ with open('README.rst') as f:
 
 setup(
     name='dj-email-url',
-    version='0.0.1',
+    version='0.0.2',
     url='https://github.com/migonzalvar/dj-email-url',
     license='BSD',
     author='Miguel Gonzalez',
