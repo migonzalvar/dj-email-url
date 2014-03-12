@@ -1,7 +1,7 @@
 dj-email-url
 ~~~~~~~~~~~~
 
-This utiliy is based on dj-database-url by Kenneth Reitz.
+This utility is based on dj-database-url by Kenneth Reitz.
 
 It allows to utilize the
 `12factor <http://www.12factor.net/backing-services>`_ inspired
