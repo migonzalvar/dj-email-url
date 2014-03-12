@@ -30,6 +30,11 @@ After this, it is necessary to assign values to settings::
     EMAIL_BACKEND = email_config['EMAIL_BACKEND']
     EMAIL_USE_TLS = email_config['EMAIL_USE_TLS']
 
+Alternatively, it is possible to use this less explicit shortcut:
+
+.. code:: python
+
+    vars().update(email_config)
 
 Supported backends
 ------------------
