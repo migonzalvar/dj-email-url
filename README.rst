@@ -87,6 +87,31 @@ File backend
 The file backend is the only one which needs a path. The url path is store
 in ``EMAIL_FILE_PATH`` key.
 
+Change Log
+----------
+
+Unreleased
+++++++++++
+
+- Add change log.
+
+- Add `ssl=` option as a query parameter for SMTP backend.
+
+- Add Travis continuous integration.
+
+0.0.2_ - 2014-03-12
++++++++++++++++++++
+
+- Add Python 3 support.
+
+0.0.1_ - 2013-02-12
++++++++++++++++++++
+
+- Initial version.
+
+.. _0.0.1: https://pypi.python.org/pypi/dj-email-url/0.0.1
+.. _0.0.2: https://pypi.python.org/pypi/dj-email-url/0.0.2
+
 CI status
 ---------
 
@@ -94,4 +119,3 @@ Development (master):
 
 .. image:: https://travis-ci.org/migonzalvar/dj-email-url.svg?branch=master
   :target: http://travis-ci.org/migonzalvar/dj-email-url
-
