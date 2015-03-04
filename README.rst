@@ -57,7 +57,7 @@ Supported backends
 
 Currently, it supports:
 
-- SMTP backend (smtp and smtps),
+- SMTP backend (smtp and smtps for TLS),
 
 - console backend (console),
 
@@ -67,8 +67,22 @@ Currently, it supports:
 
 - and dummy backend (dummy).
 
+SMTP backend
+++++++++++++
+
 The scheme ``smtps`` indicates to use TLS connections, that is to set
 ``EMAIL_USE_TLS`` to ``True``.
+
+It is possible to specify SSL using a `ssl=True` as a query parameter:
+
+.. code:: pycon
+
+    >>> url = 'smtp://user@domain.com:pass@smtp.example.com:465/?ssl=True'
+    >>> url = dj_email_url.parse(url)
+    >>> assert url['EMAIL_USE_SSL'] is True
+
+File backend
+++++++++++++
 
 The file backend is the only one which needs a path. The url path is store
 in ``EMAIL_FILE_PATH`` key.
