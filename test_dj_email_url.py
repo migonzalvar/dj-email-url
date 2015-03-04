@@ -37,6 +37,18 @@ class EmailTestSuite(unittest.TestCase):
         assert url['EMAIL_PORT'] == 587
         assert url['EMAIL_USE_TLS'] is True
 
+    def test_smtp_backend_with_ssl(self):
+        url = 'smtp://user@domain.com:pass@smtp.example.com:465/?ssl=True'
+        url = dj_email_url.parse(url)
+        assert url['EMAIL_USE_SSL'] is True
+        assert url['EMAIL_USE_TLS'] is False
+
+    def test_smtp_backend_with_tls(self):
+        url = 'smtp://user@domain.com:pass@smtp.example.com:587/?tls=True'
+        url = dj_email_url.parse(url)
+        assert url['EMAIL_USE_SSL'] is False
+        assert url['EMAIL_USE_TLS'] is True
+
 
 if __name__ == '__main__':
     unittest.main()
