@@ -1,6 +1,9 @@
 dj-email-url
 ~~~~~~~~~~~~
 
+.. image:: https://badge.fury.io/py/dj-email-url.svg
+    :target: http://badge.fury.io/py/dj-email-url
+
 This utility is based on dj-database-url by Kenneth Reitz.
 
 It allows to utilize the
