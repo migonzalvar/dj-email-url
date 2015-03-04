@@ -70,4 +70,15 @@ def parse(url):
     else:
         conf['EMAIL_USE_TLS'] = False
 
+    if url.scheme == 'smtp':
+        qs = urlparse.parse_qs(url.query)
+        if 'ssl' in qs and qs['ssl']:
+            if qs['ssl'][0] in ('1', 'true', 'True'):
+                conf['EMAIL_USE_SSL'] = True
+                conf['EMAIL_USE_TLS'] = False
+        if 'tls' in qs and qs['tls']:
+            if qs['tls'][0] in ('1', 'true', 'True'):
+                conf['EMAIL_USE_SSL'] = False
+                conf['EMAIL_USE_TLS'] = True
+
     return conf
