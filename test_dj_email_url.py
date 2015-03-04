@@ -8,10 +8,6 @@ import dj_email_url
 
 
 class EmailTestSuite(unittest.TestCase):
-
-    def test_truth(self):
-        assert True
-
     def test_smtp_parsing(self):
         url = 'smtps://user@domain.com:password@smtp.example.com:587'
         url = dj_email_url.parse(url)
