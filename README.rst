@@ -90,8 +90,8 @@ in ``EMAIL_FILE_PATH`` key.
 Change Log
 ----------
 
-Unreleased
-++++++++++
+0.0.3_ - 2015-03-05
++++++++++++++++++++
 
 - Add change log.
 
@@ -111,6 +111,7 @@ Unreleased
 
 .. _0.0.1: https://pypi.python.org/pypi/dj-email-url/0.0.1
 .. _0.0.2: https://pypi.python.org/pypi/dj-email-url/0.0.2
+.. _0.0.2: https://pypi.python.org/pypi/dj-email-url/0.0.3
 
 CI status
 ---------
