@@ -1,5 +1,6 @@
+============
 dj-email-url
-~~~~~~~~~~~~
+============
 
 .. image:: https://badge.fury.io/py/dj-email-url.svg
     :target: http://badge.fury.io/py/dj-email-url
@@ -11,7 +12,7 @@ It allows to utilize the
 environments variable to configure the email backend in a Django application.
 
 Usage
------
+=====
 
 Import the package in ``settings.py``:
 
@@ -53,7 +54,7 @@ Alternatively, it is possible to use this less explicit shortcut:
     vars().update(email_config)
 
 Supported backends
-------------------
+==================
 
 Currently, it supports:
 
@@ -68,7 +69,7 @@ Currently, it supports:
 - and dummy backend (dummy).
 
 SMTP backend
-++++++++++++
+------------
 
 The scheme ``smtps`` indicates to use TLS connections, that is to set
 ``EMAIL_USE_TLS`` to ``True``.
@@ -82,16 +83,21 @@ It is possible to specify SSL using a `ssl=True` as a query parameter:
     >>> assert url['EMAIL_USE_SSL'] is True
 
 File backend
-++++++++++++
+------------
 
 The file backend is the only one which needs a path. The url path is store
 in ``EMAIL_FILE_PATH`` key.
 
 Change Log
-----------
+==========
+
+0.0.4_ - 2015-03-05
+-------------------
+
+- Fix README.
 
 0.0.3_ - 2015-03-05
-+++++++++++++++++++
+-------------------
 
 - Add change log.
 
@@ -100,21 +106,22 @@ Change Log
 - Add Travis continuous integration.
 
 0.0.2_ - 2014-03-12
-+++++++++++++++++++
+-------------------
 
 - Add Python 3 support.
 
 0.0.1_ - 2013-02-12
-+++++++++++++++++++
+-------------------
 
 - Initial version.
 
 .. _0.0.1: https://pypi.python.org/pypi/dj-email-url/0.0.1
 .. _0.0.2: https://pypi.python.org/pypi/dj-email-url/0.0.2
-.. _0.0.2: https://pypi.python.org/pypi/dj-email-url/0.0.3
+.. _0.0.3: https://pypi.python.org/pypi/dj-email-url/0.0.3
+.. _0.0.4: https://pypi.python.org/pypi/dj-email-url/0.0.4
 
 CI status
----------
+=========
 
 Development (master):
 
