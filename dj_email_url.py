@@ -56,8 +56,8 @@ def parse(url):
     # Update with environment configuration
     conf.update({
         'EMAIL_FILE_PATH': path,
-        'EMAIL_HOST_USER': url.username,
-        'EMAIL_HOST_PASSWORD': url.password,
+        'EMAIL_HOST_USER': urlparse.unquote(url.username),
+        'EMAIL_HOST_PASSWORD': urlparse.unquote(url.password),
         'EMAIL_HOST': url.hostname,
         'EMAIL_PORT': url.port,
     })
