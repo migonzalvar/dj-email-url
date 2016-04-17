@@ -91,6 +91,11 @@ in ``EMAIL_FILE_PATH`` key.
 Change Log
 ==========
 
+0.0.5_ - 2016-04-17
+-------------------
+
+- Allow URL encoded credentials (thanks kane-c).
+
 0.0.4_ - 2015-03-05
 -------------------
 
@@ -119,6 +124,7 @@ Change Log
 .. _0.0.2: https://pypi.python.org/pypi/dj-email-url/0.0.2
 .. _0.0.3: https://pypi.python.org/pypi/dj-email-url/0.0.3
 .. _0.0.4: https://pypi.python.org/pypi/dj-email-url/0.0.4
+.. _0.0.5: https://pypi.python.org/pypi/dj-email-url/0.0.5
 
 CI status
 =========
