@@ -56,8 +56,8 @@ def parse(url):
     # Update with environment configuration
     conf.update({
         'EMAIL_FILE_PATH': path,
-        'EMAIL_HOST_USER': urlparse.unquote(url.username),
-        'EMAIL_HOST_PASSWORD': urlparse.unquote(url.password),
+        'EMAIL_HOST_USER': unquote(url.username),
+        'EMAIL_HOST_PASSWORD': unquote(url.password),
         'EMAIL_HOST': url.hostname,
         'EMAIL_PORT': url.port,
     })
@@ -82,3 +82,10 @@ def parse(url):
                 conf['EMAIL_USE_TLS'] = True
 
     return conf
+
+
+def unquote(value):
+    if value:
+        return urlparse.unquote(value)
+    else:
+        return value

@@ -20,6 +20,18 @@ class EmailTestSuite(unittest.TestCase):
         assert url['EMAIL_PORT'] == 587
         assert url['EMAIL_USE_TLS'] is True
 
+    def test_console_parsing(self):
+        url = 'console://'
+        url = dj_email_url.parse(url)
+
+        assert url['EMAIL_BACKEND'] == \
+            'django.core.mail.backends.console.EmailBackend'
+        assert url['EMAIL_HOST'] is None
+        assert url['EMAIL_HOST_PASSWORD'] is None
+        assert url['EMAIL_HOST_USER'] is None
+        assert url['EMAIL_PORT'] is None
+        assert url['EMAIL_USE_TLS'] is False
+
     def test_email_url(self):
         a = dj_email_url.config()
         assert not a
