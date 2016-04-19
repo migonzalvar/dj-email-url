@@ -29,6 +29,10 @@ SCHEMES = {
 }
 
 
+def unquote(value):
+        return urlparse.unquote(value) if value else value
+
+
 def config(env=DEFAULT_ENV, default=None):
     """Returns a dictionary with EMAIL_* settings from EMAIL_URL."""
 
@@ -56,8 +60,8 @@ def parse(url):
     # Update with environment configuration
     conf.update({
         'EMAIL_FILE_PATH': path,
-        'EMAIL_HOST_USER': urlparse.unquote(url.username),
-        'EMAIL_HOST_PASSWORD': urlparse.unquote(url.password),
+        'EMAIL_HOST_USER': unquote(url.username),
+        'EMAIL_HOST_PASSWORD': unquote(url.password),
         'EMAIL_HOST': url.hostname,
         'EMAIL_PORT': url.port,
     })
