@@ -91,6 +91,11 @@ in ``EMAIL_FILE_PATH`` key.
 Change Log
 ==========
 
+0.0.6_ - 2016-04-18
+-------------------
+
+- Fix error parsing URL without credentials (thanks martinmaillard).
+
 0.0.5_ - 2016-04-17
 -------------------
 
@@ -125,6 +130,7 @@ Change Log
 .. _0.0.3: https://pypi.python.org/pypi/dj-email-url/0.0.3
 .. _0.0.4: https://pypi.python.org/pypi/dj-email-url/0.0.4
 .. _0.0.5: https://pypi.python.org/pypi/dj-email-url/0.0.5
+.. _0.0.6: https://pypi.python.org/pypi/dj-email-url/0.0.6
 
 CI status
 =========
