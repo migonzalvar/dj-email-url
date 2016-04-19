@@ -85,7 +85,4 @@ def parse(url):
 
 
 def unquote(value):
-    if value:
-        return urlparse.unquote(value)
-    else:
-        return value
+        return urlparse.unquote(value) if value else value
