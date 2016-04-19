@@ -29,6 +29,10 @@ SCHEMES = {
 }
 
 
+def unquote(value):
+        return urlparse.unquote(value) if value else value
+
+
 def config(env=DEFAULT_ENV, default=None):
     """Returns a dictionary with EMAIL_* settings from EMAIL_URL."""
 
@@ -82,7 +86,3 @@ def parse(url):
                 conf['EMAIL_USE_TLS'] = True
 
     return conf
-
-
-def unquote(value):
-        return urlparse.unquote(value) if value else value
