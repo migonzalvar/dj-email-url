@@ -140,3 +140,6 @@ Development (master):
 
 .. image:: https://travis-ci.org/migonzalvar/dj-email-url.svg?branch=master
   :target: http://travis-ci.org/migonzalvar/dj-email-url
+
+.. image:: https://codecov.io/gh/migonzalvar/dj-email-url/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/migonzalvar/dj-email-url
