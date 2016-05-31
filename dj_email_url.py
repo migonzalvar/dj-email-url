@@ -84,5 +84,7 @@ def parse(url):
             if qs['tls'][0] in ('1', 'true', 'True'):
                 conf['EMAIL_USE_SSL'] = False
                 conf['EMAIL_USE_TLS'] = True
+    else:
+        conf['EMAIL_USE_SSL'] = False
 
     return conf
