@@ -92,7 +92,7 @@ in ``EMAIL_FILE_PATH`` key.
 Change Log
 ==========
 
-0.0.7_ - 2015-05-31
+0.0.7_ - 2016-05-31
 -------------------
 
 - Add EMAIL_USE_SSL setting to docs and set a default value (thanks iraycd).
@@ -138,6 +138,7 @@ Change Log
 .. _0.0.4: https://pypi.python.org/pypi/dj-email-url/0.0.4
 .. _0.0.5: https://pypi.python.org/pypi/dj-email-url/0.0.5
 .. _0.0.6: https://pypi.python.org/pypi/dj-email-url/0.0.6
+.. _0.0.7: https://pypi.python.org/pypi/dj-email-url/0.0.7
 
 CI status
 =========
