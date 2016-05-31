@@ -68,5 +68,13 @@ class EmailTestSuite(unittest.TestCase):
         assert url['EMAIL_HOST_PASSWORD'] == 'pass%^&*()123'
         assert url['EMAIL_HOST_USER'] == 'user!@#$5678'
 
+    def test_file_path(self):
+        url = 'smtp://user@domain.com:pass@smtp.example.com:587' \
+              '//tmp/app-messages?tls=True'
+        url = dj_email_url.parse(url)
+        assert url['EMAIL_FILE_PATH'] == "/tmp/app-messages"
+        assert url['EMAIL_USE_SSL'] is False
+        assert url['EMAIL_USE_TLS'] is True
+
 if __name__ == '__main__':
     unittest.main()
