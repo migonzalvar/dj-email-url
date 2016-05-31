@@ -92,6 +92,12 @@ in ``EMAIL_FILE_PATH`` key.
 Change Log
 ==========
 
+0.0.7_ - 2015-05-31
+-------------------
+
+- Add EMAIL_USE_SSL setting to docs and set a default value (thanks iraycd).
+- Add coverage (thanks iraycd).
+
 0.0.6_ - 2016-04-18
 -------------------
 
