@@ -46,6 +46,7 @@ Finally, it is **necessary** to assign values to settings:
     EMAIL_PORT = email_config['EMAIL_PORT']
     EMAIL_BACKEND = email_config['EMAIL_BACKEND']
     EMAIL_USE_TLS = email_config['EMAIL_USE_TLS']
+    EMAIL_USE_SSL = email_config['EMAIL_USE_SSL']
 
 Alternatively, it is possible to use this less explicit shortcut:
 
