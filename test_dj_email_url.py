@@ -8,7 +8,7 @@ import dj_email_url
 
 
 class EmailTestSuite(unittest.TestCase):
-    def test_smtp_parsing(self):
+    def test_smtps_parsing(self):
         url = 'smtps://user@domain.com:password@smtp.example.com:587'
         url = dj_email_url.parse(url)
 
@@ -19,6 +19,7 @@ class EmailTestSuite(unittest.TestCase):
         assert url['EMAIL_HOST_USER'] == 'user@domain.com'
         assert url['EMAIL_PORT'] == 587
         assert url['EMAIL_USE_TLS'] is True
+        assert url['EMAIL_USE_SSL'] is False
 
     def test_console_parsing(self):
         url = 'console://'
@@ -31,6 +32,7 @@ class EmailTestSuite(unittest.TestCase):
         assert url['EMAIL_HOST_USER'] is None
         assert url['EMAIL_PORT'] is None
         assert url['EMAIL_USE_TLS'] is False
+        assert url['EMAIL_USE_SSL'] is False
 
     def test_email_url(self):
         a = dj_email_url.config()
@@ -48,6 +50,7 @@ class EmailTestSuite(unittest.TestCase):
         assert url['EMAIL_HOST_USER'] == 'user@domain.com'
         assert url['EMAIL_PORT'] == 587
         assert url['EMAIL_USE_TLS'] is True
+        assert url['EMAIL_USE_SSL'] is False
 
     def test_smtp_backend_with_ssl(self):
         url = 'smtp://user@domain.com:pass@smtp.example.com:465/?ssl=True'
