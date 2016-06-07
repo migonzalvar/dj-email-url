@@ -2,5 +2,7 @@
 *.pyc
 .coverage
 .tox/
+build/*
+dist/*
 __pycache__
 coverage.xml
