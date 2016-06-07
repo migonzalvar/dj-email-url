@@ -92,6 +92,11 @@ in ``EMAIL_FILE_PATH`` key.
 Change Log
 ==========
 
+0.0.8_ - 2016-06-07
+-------------------
+
+- Allow universal wheel
+
 0.0.7_ - 2016-05-31
 -------------------
 
@@ -139,6 +144,7 @@ Change Log
 .. _0.0.5: https://pypi.python.org/pypi/dj-email-url/0.0.5
 .. _0.0.6: https://pypi.python.org/pypi/dj-email-url/0.0.6
 .. _0.0.7: https://pypi.python.org/pypi/dj-email-url/0.0.7
+.. _0.0.8: https://pypi.python.org/pypi/dj-email-url/0.0.8
 
 CI status
 =========
