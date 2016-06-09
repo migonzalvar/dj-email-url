@@ -11,5 +11,6 @@ clean:
 release: test clean
 	bumpversion patch && git log -1 -p
 	python setup.py sdist bdist_wheel
-	echo ** Upload to PyPI
-	echo python -m twine upload dist/*
+	@echo
+	@echo Upload to PyPI
+	@echo python -m twine upload dist/*
