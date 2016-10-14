@@ -2,7 +2,7 @@ default: test
 
 test:
 	python test_dj_email_url.py
-	rst2html README.rst --halt=info >/dev/null
+	rst2html.py README.rst --halt=info >/dev/null
 
 clean:
 	rm -f README.rst.html
