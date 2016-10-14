@@ -92,10 +92,15 @@ in ``EMAIL_FILE_PATH`` key.
 Change Log
 ==========
 
+0.0.10_ - 2016-10-14
+--------------------
+
+- Post release version to fix release date in change log.
+
 0.0.9_ - 2016-10-14
 -------------------
 
-- Fixcase when user sets ssl=False in its url (thanks bogdal)
+- Fix case when user sets ssl=False in its url (thanks bogdal)
 
 0.0.8_ - 2016-06-07
 -------------------
@@ -151,6 +156,7 @@ Change Log
 .. _0.0.7: https://pypi.python.org/pypi/dj-email-url/0.0.7
 .. _0.0.8: https://pypi.python.org/pypi/dj-email-url/0.0.8
 .. _0.0.9: https://pypi.python.org/pypi/dj-email-url/0.0.9
+.. _0.0.10: https://pypi.python.org/pypi/dj-email-url/0.0.10
 
 CI status
 =========
