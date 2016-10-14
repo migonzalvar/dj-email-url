@@ -65,6 +65,8 @@ def parse(url):
         'EMAIL_HOST_PASSWORD': unquote(url.password),
         'EMAIL_HOST': url.hostname,
         'EMAIL_PORT': url.port,
+        'EMAIL_USE_SSL': False,
+        'EMAIL_USE_TLS': False,
     })
 
     if url.scheme in SCHEMES:
@@ -72,8 +74,6 @@ def parse(url):
 
     if url.scheme == 'smtps':
         conf['EMAIL_USE_TLS'] = True
-    else:
-        conf['EMAIL_USE_TLS'] = False
 
     if 'ssl' in qs and qs['ssl']:
         if qs['ssl'][0] in ('1', 'true', 'True'):
@@ -83,7 +83,5 @@ def parse(url):
         if qs['tls'][0] in ('1', 'true', 'True'):
             conf['EMAIL_USE_SSL'] = False
             conf['EMAIL_USE_TLS'] = True
-    else:
-        conf['EMAIL_USE_SSL'] = False
 
     return conf
