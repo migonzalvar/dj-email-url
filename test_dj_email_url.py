@@ -58,6 +58,12 @@ class EmailTestSuite(unittest.TestCase):
         assert url['EMAIL_USE_SSL'] is True
         assert url['EMAIL_USE_TLS'] is False
 
+    def test_smtp_backend_without_ssl(self):
+        url = 'smtp://user@domain.com:pass@smtp.example.com:465/?ssl=False'
+        url = dj_email_url.parse(url)
+        assert url['EMAIL_USE_SSL'] is False
+        assert url['EMAIL_USE_TLS'] is False
+
     def test_smtps_backend_with_ssl(self):
         url = 'smtps://user@domain.com:pass@smtp.example.com:465/?ssl=True'
         url = dj_email_url.parse(url)
@@ -69,6 +75,12 @@ class EmailTestSuite(unittest.TestCase):
         url = dj_email_url.parse(url)
         assert url['EMAIL_USE_SSL'] is False
         assert url['EMAIL_USE_TLS'] is True
+
+    def test_smtp_backend_without_tls(self):
+        url = 'smtp://user@domain.com:pass@smtp.example.com:587/?tls=False'
+        url = dj_email_url.parse(url)
+        assert url['EMAIL_USE_SSL'] is False
+        assert url['EMAIL_USE_TLS'] is False
 
     def test_special_chars(self):
         url = 'smtp://user%21%40%23%245678:pass%25%5E%26%2A%28%29123@' \
