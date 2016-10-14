@@ -9,7 +9,6 @@ clean:
 	rm -f dist/*
 
 release: test clean
-	bumpversion patch && git log -1 -p
 	python setup.py sdist bdist_wheel
 	@echo
 	@echo Upload to PyPI
