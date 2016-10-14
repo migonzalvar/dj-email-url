@@ -92,7 +92,7 @@ in ``EMAIL_FILE_PATH`` key.
 Change Log
 ==========
 
-0.0.9_ - Unreleased
+0.0.9_ - 2016-10-14
 -------------------
 
 - Fixcase when user sets ssl=False in its url (thanks bogdal)
