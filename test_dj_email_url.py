@@ -97,5 +97,6 @@ class EmailTestSuite(unittest.TestCase):
         assert url['EMAIL_USE_SSL'] is False
         assert url['EMAIL_USE_TLS'] is True
 
+
 if __name__ == '__main__':
     unittest.main()
