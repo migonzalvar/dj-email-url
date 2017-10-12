@@ -8,8 +8,8 @@ import dj_email_url
 
 
 class EmailTestSuite(unittest.TestCase):
-    def test_smtps_parsing(self):
-        url = 'smtps://user@domain.com:password@smtp.example.com:587'
+    def test_submit_parsing(self):
+        url = 'submit://user@domain.com:password@smtp.example.com'
         url = dj_email_url.parse(url)
 
         assert url['EMAIL_BACKEND'] == \
@@ -51,6 +51,30 @@ class EmailTestSuite(unittest.TestCase):
         assert url['EMAIL_PORT'] == 587
         assert url['EMAIL_USE_TLS'] is True
         assert url['EMAIL_USE_SSL'] is False
+
+    def test_submit_backend_with_ssl(self):
+        url = 'submit://user@domain.com:pass@smtp.example.com/?ssl=True'
+        url = dj_email_url.parse(url)
+        assert url['EMAIL_USE_SSL'] is True
+        assert url['EMAIL_USE_TLS'] is False
+
+    def test_submit_backend_without_ssl(self):
+        url = 'submit://user@domain.com:pass@smtp.example.com/?ssl=False'
+        url = dj_email_url.parse(url)
+        assert url['EMAIL_USE_SSL'] is False
+        assert url['EMAIL_USE_TLS'] is True
+
+    def test_submit_backend_with_tls(self):
+        url = 'submit://user@domain.com:pass@smtp.example.com/?tls=True'
+        url = dj_email_url.parse(url)
+        assert url['EMAIL_USE_SSL'] is False
+        assert url['EMAIL_USE_TLS'] is True
+
+    def test_submit_backend_without_tls(self):
+        url = 'submit://user@domain.com:pass@smtp.example.com/?tls=False'
+        url = dj_email_url.parse(url)
+        assert url['EMAIL_USE_SSL'] is False
+        assert url['EMAIL_USE_TLS'] is False
 
     def test_smtp_backend_with_ssl(self):
         url = 'smtp://user@domain.com:pass@smtp.example.com:465/?ssl=True'

@@ -32,7 +32,7 @@ Other option is parse an arbitrary email URL:
 
 .. code:: python
 
-    email_config = dj_email_url.parse('smtp://...')
+    email_config = dj_email_url.parse('submit://...')
 
 
 Finally, it is **necessary** to assign values to settings:
@@ -59,7 +59,7 @@ Supported backends
 
 Currently, it supports:
 
-- SMTP backend (smtp and smtps for TLS),
+- SMTP Submission backend (submit),
 
 - console backend (console),
 
@@ -69,17 +69,26 @@ Currently, it supports:
 
 - and dummy backend (dummy).
 
-SMTP backend
-------------
+SMTP Submission backend
+-----------------------
 
-The scheme ``smtps`` indicates to use TLS connections, that is to set
-``EMAIL_USE_TLS`` to ``True``.
+By default, `port 587 is used <https://www.iana.org/assignments/uri-schemes/prov/submit>`_
+and TLS is enabled, that is ``EMAIL_USE_TLS`` is set to ``True``.
 
-It is possible to specify SSL using a `ssl=True` as a query parameter:
+To disable TLS, pass `tls=False` as a query parameter:
 
 .. code:: pycon
 
-    >>> url = 'smtp://user@domain.com:pass@smtp.example.com:465/?ssl=True'
+    >>> url = 'submit://user@domain.com:pass@smtp.example.com:25/?tls=False'
+    >>> url = dj_email_url.parse(url)
+    >>> assert url['EMAIL_USE_TLS'] is False
+
+To use legacy SMTP-over-SSL (usually used with port 465), pass
+`ssl=True` as a query parameter:
+
+.. code:: pycon
+
+    >>> url = 'submit://user@domain.com:pass@smtp.example.com:465/?ssl=True'
     >>> url = dj_email_url.parse(url)
     >>> assert url['EMAIL_USE_SSL'] is True
 
@@ -91,6 +100,8 @@ in ``EMAIL_FILE_PATH`` key.
 
 Change Log
 ==========
+
+- Add standard submit:// scheme, deprecate smtp/smtps.
 
 0.0.10_ - 2016-10-14
 --------------------
