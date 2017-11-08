@@ -92,6 +92,13 @@ in ``EMAIL_FILE_PATH`` key.
 Change Log
 ==========
 
+Unreleased
+----------
+
+- Expand which values are considered as truthy on a query string param. Now,
+  `1`, `on`, `true`, and `yes`, as a single character or in all case variants
+  (lower, upper and title case) are considered as `True`.
+
 0.0.10_ - 2016-10-14
 --------------------
 

@@ -29,6 +29,14 @@ SCHEMES = {
 }
 
 
+TRUTHY = (
+    '1',
+    'y', 'Y', 'yes', 'Yes', 'YES',
+    't', 'T', 'true', 'True', 'TRUE',
+    'on', 'On', 'ON',
+)
+
+
 def unquote(value):
         return urlparse.unquote(value) if value else value
 
@@ -76,11 +84,11 @@ def parse(url):
         conf['EMAIL_USE_TLS'] = True
 
     if 'ssl' in qs and qs['ssl']:
-        if qs['ssl'][0] in ('1', 'true', 'True'):
+        if qs['ssl'][0] in TRUTHY:
             conf['EMAIL_USE_SSL'] = True
             conf['EMAIL_USE_TLS'] = False
     elif 'tls' in qs and qs['tls']:
-        if qs['tls'][0] in ('1', 'true', 'True'):
+        if qs['tls'][0] in TRUTHY:
             conf['EMAIL_USE_SSL'] = False
             conf['EMAIL_USE_TLS'] = True
 
