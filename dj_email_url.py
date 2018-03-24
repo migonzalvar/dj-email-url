@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import warnings
 
 try:
     import urlparse
@@ -21,7 +22,9 @@ DEFAULT_ENV = 'EMAIL_URL'
 
 SCHEMES = {
     'smtp': 'django.core.mail.backends.smtp.EmailBackend',
-    'smtps': 'django.core.mail.backends.smtp.EmailBackend',
+    'submission': 'django.core.mail.backends.smtp.EmailBackend',
+    'submit': 'django.core.mail.backends.smtp.EmailBackend',
+    'smtps': 'django.core.mail.backends.smtp.EmailBackend',  # pending deprecation
     'console': 'django.core.mail.backends.console.EmailBackend',
     'file': 'django.core.mail.backends.filebased.EmailBackend',
     'memory': 'django.core.mail.backends.locmem.EmailBackend',
@@ -80,9 +83,29 @@ def parse(url):
     if url.scheme in SCHEMES:
         conf['EMAIL_BACKEND'] = SCHEMES[url.scheme]
 
+    # Set defaults for `smtp`
+    if url.scheme == 'smtp':
+        if not conf['EMAIL_HOST']:
+            conf['EMAIL_HOST'] = 'localhost'
+        if not conf['EMAIL_PORT']:
+            conf['EMAIL_PORT'] = 25
+
+    # Set defaults for `smtps`
     if url.scheme == 'smtps':
+        warnings.warn(
+            "`smpts` scheme will be deprecated in a future version,"
+            " use `subsmission` instead",
+            UserWarning,
+        )
         conf['EMAIL_USE_TLS'] = True
 
+    # Set defaults for `submission`/`submit`
+    if url.scheme in ('submission', 'submit'):
+        conf['EMAIL_USE_TLS'] = True
+        if not conf['EMAIL_PORT']:
+            conf['EMAIL_PORT'] = 587
+
+    # Query args overwrite defaults
     if 'ssl' in qs and qs['ssl']:
         if qs['ssl'][0] in TRUTHY:
             conf['EMAIL_USE_SSL'] = True

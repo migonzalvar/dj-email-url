@@ -52,10 +52,43 @@ class EmailTestSuite(unittest.TestCase):
         assert url['EMAIL_USE_TLS'] is True
         assert url['EMAIL_USE_SSL'] is False
 
-    def test_smtp_backend_with_ssl(self):
+    def test_smtp_backend_smtp_scheme_default_port(self):
+        url = 'smtp://user@domain.com:pass@smtp.example.com'
+        url = dj_email_url.parse(url)
+        assert url['EMAIL_PORT'] == 25
+        assert url['EMAIL_USE_SSL'] is False
+        assert url['EMAIL_USE_TLS'] is False
+
+    def test_smtp_backend_submit_scheme_default_port(self):
+        # Included in README
+        url = 'submit://user@exmple.com:pass@smtp.example.com'
+        url = dj_email_url.parse(url)
+        assert url['EMAIL_PORT'] == 587
+        assert url['EMAIL_USE_SSL'] is False
+        assert url['EMAIL_USE_TLS'] is True
+
+    def test_smtp_backend_submission_scheme_default_port(self):
+        # Included in README
+        url = 'submission://user@exmple.com:pass@smtp.example.com'
+        url = dj_email_url.parse(url)
+        assert url['EMAIL_PORT'] == 587
+        assert url['EMAIL_USE_SSL'] is False
+        assert url['EMAIL_USE_TLS'] is True
+
+    def test_smtp_backend_with_smpt_over_ssl(self):
         url = 'smtp://user@domain.com:pass@smtp.example.com:465/?ssl=True'
         url = dj_email_url.parse(url)
+        assert url['EMAIL_PORT'] == 465
         assert url['EMAIL_USE_SSL'] is True
+        assert url['EMAIL_USE_TLS'] is False
+
+    def test_smtp_backend_local_mta(self):
+        # Included in README
+        url = 'smtp://'
+        url = dj_email_url.parse(url)
+        assert url['EMAIL_HOST'] == 'localhost'
+        assert url['EMAIL_PORT'] == 25
+        assert url['EMAIL_USE_SSL'] is False
         assert url['EMAIL_USE_TLS'] is False
 
     def test_smtp_backend_without_ssl(self):
@@ -98,5 +131,5 @@ class EmailTestSuite(unittest.TestCase):
         assert url['EMAIL_USE_TLS'] is True
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # pragma: no cover
     unittest.main()
