@@ -86,7 +86,9 @@ Currently, `dj-email-url` supports:
 SMTP backend
 ------------
 
-The `SMTP backend`_ is selected when the scheme in the URL if one these:
+The `SMTP backend`__ is selected when the scheme in the URL if one these:
+
+__ https://docs.djangoproject.com/en/dev/topics/email/#smtp-backend
 
 ============================ ============ =========================
 Value                        Default port Comment
@@ -95,7 +97,6 @@ Value                        Default port Comment
 ``submission`` or ``submit`` 587          SMTP with STARTTLS
 ============================ ============ =========================
 
-.. _SMTP backend: https://docs.djangoproject.com/en/dev/topics/email/#smtp-backend
 
 *Changed in version 0.1:* The use of ``smtps`` is now discouraged__
 The value ``smtps`` was used to indicate to use TLS connections,
