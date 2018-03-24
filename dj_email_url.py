@@ -24,7 +24,7 @@ SCHEMES = {
     'smtp': 'django.core.mail.backends.smtp.EmailBackend',
     'submission': 'django.core.mail.backends.smtp.EmailBackend',
     'submit': 'django.core.mail.backends.smtp.EmailBackend',
-    'smtps': 'django.core.mail.backends.smtp.EmailBackend',  # pending deprecation
+    'smtps': 'django.core.mail.backends.smtp.EmailBackend',  # pend deprecation
     'console': 'django.core.mail.backends.console.EmailBackend',
     'file': 'django.core.mail.backends.filebased.EmailBackend',
     'memory': 'django.core.mail.backends.locmem.EmailBackend',
