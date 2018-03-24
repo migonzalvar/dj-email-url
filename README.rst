@@ -160,6 +160,11 @@ Change Log
 Unreleased
 ----------
 
+0.1.0_ - 2018-03-24
+-------------------
+
+.. _0.1.0: https://pypi.python.org/pypi/dj-email-url/0.1.0
+
 - Added new schemes ``submission`` and ``submit``
   to select SMTP backend on port 587 with STARTTLS.
   Thanks to @LEW21 to suggest to include new `submit` URI.
