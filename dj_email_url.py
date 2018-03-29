@@ -94,7 +94,7 @@ def parse(url):
     if url.scheme == 'smtps':
         warnings.warn(
             "`smpts` scheme will be deprecated in a future version,"
-            " use `subsmission` instead",
+            " use `submission` instead",
             UserWarning,
         )
         conf['EMAIL_USE_TLS'] = True
