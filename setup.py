@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
-
+"""Packaging implementation"""
+from os.path import dirname, join
 from setuptools import setup
 
 
 def read_file(filename):
-    with open(filename) as f:
-        return f.read()
+    with open(join(dirname(__file__), filename)) as file:
+        return file.read()
 
 setup(
     name='dj-email-url',
