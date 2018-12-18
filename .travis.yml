@@ -1,20 +1,23 @@
 language: python
-sudo: false
+python:
+- 2.7
+- 3.4
+- 3.5
+- 3.6
+
 matrix:
   include:
-    - python: 2.7
-      env: TOXENV=py27
-    - python: 3.4
-      env: TOXENV=py34
-    - python: 3.5
-      env: TOXENV=py35
-    - python: 3.6
-      env: TOXENV=py36
-    - python: 3.5
-      env: TOXENV=flake8
+  - { stage: lint, python: 3.6, env: TOXENV=flake8, install: pip install tox }
+  # Work around Travis Python 3.7 issue: https://github.com/travis-ci/travis-ci/issues/9815
+  - { stage: test, python: 3.7, dist: xenial, sudo: true }
+
+stages:
+- lint
+- test
+
 install:
-  - pip install tox codecov
-after_success:
-  codecov
+- pip install tox-travis codecov
 script:
-  - tox
+- tox
+after_success:
+- codecov
