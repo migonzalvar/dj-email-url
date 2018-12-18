@@ -8,6 +8,7 @@ def read_file(filename):
     with open(join(dirname(__file__), filename)) as file:
         return file.read()
 
+
 setup(
     name='dj-email-url',
     version='0.1.0',
@@ -17,8 +18,8 @@ setup(
     author_email='migonzalvar@gmail.com',
     description='Use an URL to configure email backend settings in your '
                 'Django Application.',
-    long_description=read_file('README.rst') + '\n' +
-                     read_file('CHANGELOG.rst'),
+    long_description=read_file('README.rst') + '\n'
+                + read_file('CHANGELOG.rst'),
     py_modules=['dj_email_url'],
     zip_safe=False,
     include_package_data=True,
