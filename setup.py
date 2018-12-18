@@ -3,8 +3,9 @@
 from setuptools import setup
 
 
-with open('README.rst') as f:
-    long_description = f.read()
+def read_file(filename):
+    with open(filename) as f:
+        return f.read()
 
 setup(
     name='dj-email-url',
@@ -15,7 +16,8 @@ setup(
     author_email='migonzalvar@gmail.com',
     description='Use an URL to configure email backend settings in your '
                 'Django Application.',
-    long_description=long_description,
+    long_description=read_file('README.rst') + '\n' +
+                     read_file('CHANGELOG.rst'),
     py_modules=['dj_email_url'],
     zip_safe=False,
     include_package_data=True,
@@ -27,8 +29,13 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
-        'Topic :: Software Development :: Libraries :: Python Modules'
+        'Topic :: Software Development :: Libraries :: Python Modules',
     ]
 )
