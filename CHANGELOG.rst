@@ -4,6 +4,9 @@ Change Log
 Unreleased
 ----------
 
+- Added support for ``DEFAULT_FROM_EMAIL`` and ``SERVER_EMAIL`` in the URL as
+  query parameters.
+
 0.1.0_ - 2018-03-24
 -------------------
 

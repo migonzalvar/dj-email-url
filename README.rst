@@ -108,6 +108,33 @@ Currently, `dj-email-url` supports:
         >>> dj_email_url.parse("smtp://user:%21%40%23%24%25%5E%26%2A@localhost")["EMAIL_HOST_PASSWORD"]
         '!@#$%^&*'
 
+
+Set from email addresses
+========================
+
+`dj-email-url` also supports to optionally specify origin email addreses.
+
++--------------------+-------------------------+
+| Setting            | Query parameter         |
++====================+=========================+
+| SERVER_EMAIL       | ``_server_email``       |
++--------------------+-------------------------+
+| DEFAULT_FROM_EMAIL | ``_default_from_email`` |
++--------------------+-------------------------+
+
+For example: ``smtp://USER:PASSWORD@smtp.example.com/?_server_email=error@example.com``
+
+Do not forget to assign values to settings:
+
+.. code:: python
+
+    SERVER_EMAIL = email_config.get('SERVER_EMAIL', 'root@localhost')
+    DEFAULT_FROM_EMAIL = email_config.get('DEFAULT_FROM_EMAIL', 'webmaster@localhost')
+
+
+More info
+=========
+
 SMTP backend
 ------------
 

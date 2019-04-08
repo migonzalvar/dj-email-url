@@ -131,5 +131,27 @@ class EmailTestSuite(unittest.TestCase):
         assert url['EMAIL_USE_TLS'] is True
 
 
+class EmailExtraParamsTestSuite(unittest.TestCase):
+    def test_server_email_undefined(self):
+        url = 'console:'
+        url = dj_email_url.parse(url)
+        assert 'SERVER_EMAIL' not in url
+
+    def test_server_email_parsed(self):
+        url = 'console://?_server_email=admin@example.com'
+        url = dj_email_url.parse(url)
+        assert url['SERVER_EMAIL'] == 'admin@example.com'
+
+    def test_default_from_email_undefined(self):
+        url = 'console:'
+        url = dj_email_url.parse(url)
+        assert 'DEFAULT_FROM_EMAIL' not in url
+
+    def test_default_from_email_parsed(self):
+        url = 'console://?_default_from_email=django@example.com'
+        url = dj_email_url.parse(url)
+        assert url['DEFAULT_FROM_EMAIL'] == 'django@example.com'
+
+
 if __name__ == '__main__':  # pragma: no cover
     unittest.main()

@@ -115,4 +115,10 @@ def parse(url):
             conf['EMAIL_USE_SSL'] = False
             conf['EMAIL_USE_TLS'] = True
 
+    # From addresses
+    if '_server_email' in qs:
+        conf['SERVER_EMAIL'] = qs['_server_email'][0]
+    if '_default_from_email' in qs:
+        conf['DEFAULT_FROM_EMAIL'] = qs['_default_from_email'][0]
+
     return conf
