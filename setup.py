@@ -11,7 +11,7 @@ def read_file(filename):
 
 setup(
     name='dj-email-url',
-    version='0.1.0',
+    version='0.2.0',
     url='https://github.com/migonzalvar/dj-email-url',
     license='BSD',
     author='Miguel Gonzalez',

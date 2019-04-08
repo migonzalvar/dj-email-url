@@ -4,6 +4,11 @@ Change Log
 Unreleased
 ----------
 
+0.2.0_ - 2019-04-08
+-------------------
+
+.. _0.2.0: https://pypi.python.org/pypi/dj-email-url/0.2.0
+
 - Added support for ``DEFAULT_FROM_EMAIL`` and ``SERVER_EMAIL`` in the URL as
   query parameters.
 
