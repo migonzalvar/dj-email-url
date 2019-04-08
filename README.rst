@@ -78,7 +78,7 @@ Currently, `dj-email-url` supports:
 +-----------+--------------------------------------------------+-----------------------------------------------------------+
 | SMTP      | ``smtp:``                                        | Sends using a mail transfer agent at localhost on port 25 |
 +-----------+--------------------------------------------------+-----------------------------------------------------------+
-| SMTP      | ``submission://USER:PASSWORD@smtp.sendgrid.com`` | Sends using SendGridx SMTP on port 587 (STARTTLS)         |
+| SMTP      | ``submission://USER:PASSWORD@smtp.sendgrid.com`` | Sends using SendGrid_ SMTP on port 587 (STARTTLS)         |
 +-----------+--------------------------------------------------+-----------------------------------------------------------+
 | File      | ``file:``                                        | Writes to a file                                          |
 +-----------+--------------------------------------------------+-----------------------------------------------------------+
