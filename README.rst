@@ -66,34 +66,28 @@ Alternatively, it is possible to use this less explicit shortcut:
 
     vars().update(email_config)
 
-Common EMAIL_URL values
------------------------
-
-====================================================================== ======================================================
-EMAIL_URL                                                              Description
-====================================================================== ======================================================
-``console:``                                                           Email printed on screen (development)
-``smtp:``                                                              Email sent using a mail transfer agent at localhost
-``submission://sendgrid_username:sendgrid_password@smtp.sendgrid.com`` Email sent using SendGrid_ SMTP on port 587 (STARTTLS)
-====================================================================== ======================================================
-
-.. _SendGrid: https://sendgrid.com/docs/Integrate/Frameworks/django.html
-
 Supported backends
 ==================
 
 Currently, `dj-email-url` supports:
 
-- SMTP backend
-  (``smtp`` for port 25, ``submission`` or ``submit`` for port 587),
++-----------+--------------------------------------------------+-----------------------------------------------------------+
+| Backend   | EMAIL_URL                                        | Description                                               |
++===========+==================================================+===========================================================+
+| Console   | ``console:``                                     | Writes to stdout (development)                            |
++-----------+--------------------------------------------------+-----------------------------------------------------------+
+| SMTP      | ``smtp:``                                        | Sends using a mail transfer agent at localhost on port 25 |
++-----------+--------------------------------------------------+-----------------------------------------------------------+
+| SMTP      | ``submission://USER:PASSWORD@smtp.sendgrid.com`` | Sends using SendGridx SMTP on port 587 (STARTTLS)         |
++-----------+--------------------------------------------------+-----------------------------------------------------------+
+| File      | ``file:``                                        | Writes to a file                                          |
++-----------+--------------------------------------------------+-----------------------------------------------------------+
+| In-memory | ``memory:``                                      |                                                           |
++-----------+--------------------------------------------------+-----------------------------------------------------------+
+| Dummy     | ``dummy:``                                       |                                                           |
++-----------+--------------------------------------------------+-----------------------------------------------------------+
 
-- console backend (``console``),
-
-- file backend (``file``),
-
-- in-memory backend (``memory``),
-
-- and dummy backend (``dummy``).
+.. _SendGrid: https://sendgrid.com/docs/Integrate/Frameworks/django.html
 
 SMTP backend
 ------------
