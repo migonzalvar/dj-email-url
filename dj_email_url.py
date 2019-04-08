@@ -41,7 +41,7 @@ TRUTHY = (
 
 
 def unquote(value):
-        return urlparse.unquote(value) if value else value
+    return urlparse.unquote(value) if value else value
 
 
 def config(env=DEFAULT_ENV, default=None):
