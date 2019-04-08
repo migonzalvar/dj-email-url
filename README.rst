@@ -89,6 +89,25 @@ Currently, `dj-email-url` supports:
 
 .. _SendGrid: https://sendgrid.com/docs/Integrate/Frameworks/django.html
 
+
+.. warning:: Using special characters on passwords
+
+    To use characters that have a special meaning in an URL (think of ``&``)
+    you should use `percent encoding <https://en.wikipedia.org/wiki/Percent-encoding>`_.
+    For example, ``m&m`` would become ``m%26m``.
+
+    Because the percent character itself (``%``) serves as the indicator for
+    percent-encoded octets, it must be percent-encoded as ``%25``.
+
+    .. code:: pycon
+
+        >>> from urllib.parse import quote_plus
+        >>> import dj_email_url
+        >>> quote_plus("!@#$%^&*")
+        '%21%40%23%24%25%5E%26%2A'
+        >>> dj_email_url.parse("smtp://user:%21%40%23%24%25%5E%26%2A@localhost")["EMAIL_HOST_PASSWORD"]
+        '!@#$%^&*'
+
 SMTP backend
 ------------
 
