@@ -93,7 +93,7 @@ def parse(url):
     # Set defaults for `smtps`
     if url.scheme == 'smtps':
         warnings.warn(
-            "`smpts` scheme will be deprecated in a future version,"
+            "`smtps` scheme will be deprecated in a future version,"
             " use `submission` instead",
             UserWarning,
         )
