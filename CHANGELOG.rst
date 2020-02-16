@@ -4,6 +4,10 @@ Change Log
 Unreleased
 ----------
 
+- Removed support for Python versions which reached end-of-life.
+
+- Fixed typo. Thanks to @jeffmacdonald.
+
 0.2.0_ - 2019-04-08
 -------------------
 
