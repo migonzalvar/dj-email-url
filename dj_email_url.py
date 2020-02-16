@@ -3,18 +3,15 @@
 import os
 import warnings
 
-try:
-    import urlparse
-except ImportError:
-    import urllib.parse as urlparse
+import urllib.parse
 
 
 # Register email schemes in URLs.
-urlparse.uses_netloc.append('smtp')
-urlparse.uses_netloc.append('console')
-urlparse.uses_netloc.append('file')
-urlparse.uses_netloc.append('memory')
-urlparse.uses_netloc.append('dummy')
+urllib.parse.uses_netloc.append('smtp')
+urllib.parse.uses_netloc.append('console')
+urllib.parse.uses_netloc.append('file')
+urllib.parse.uses_netloc.append('memory')
+urllib.parse.uses_netloc.append('dummy')
 
 
 DEFAULT_ENV = 'EMAIL_URL'
@@ -41,7 +38,7 @@ TRUTHY = (
 
 
 def unquote(value):
-    return urlparse.unquote(value) if value else value
+    return urllib.parse.unquote(value) if value else value
 
 
 def config(env=DEFAULT_ENV, default=None):
@@ -62,8 +59,8 @@ def parse(url):
 
     conf = {}
 
-    url = urlparse.urlparse(url)
-    qs = urlparse.parse_qs(url.query)
+    url = urllib.parse.urlparse(url)
+    qs = urllib.parse.parse_qs(url.query)
 
     # Remove query strings
     path = url.path[1:]
