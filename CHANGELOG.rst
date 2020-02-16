@@ -4,6 +4,11 @@ Change Log
 Unreleased
 ----------
 
+1.0.0_ - 2020-02-16
+-------------------
+
+.. _1.0.0: https://pypi.python.org/pypi/dj-email-url/1.0.0
+
 - Removed support for Python versions which reached end-of-life.
 
 - Fixed typo. Thanks to @jeffmacdonald.
