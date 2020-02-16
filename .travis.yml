@@ -1,15 +1,13 @@
 language: python
 python:
-- 2.7
-- 3.4
 - 3.5
 - 3.6
+- 3.7
+- 3.8
 
 matrix:
   include:
   - { stage: lint, python: 3.6, env: TOXENV=flake8, install: pip install tox }
-  # Work around Travis Python 3.7 issue: https://github.com/travis-ci/travis-ci/issues/9815
-  - { stage: test, python: 3.7, dist: xenial, sudo: true }
 
 stages:
 - lint
