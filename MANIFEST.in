@@ -1,2 +1,3 @@
 include dj_email_url.py
 include *.rst
+include LICENSE
