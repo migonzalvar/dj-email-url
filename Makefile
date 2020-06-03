@@ -1,7 +1,7 @@
 default: test
 
 test:
-	python test_dj_email_url.py
+	python3 test_dj_email_url.py
 	rst2html.py README.rst --halt=info >/dev/null
 
 clean:
@@ -9,7 +9,7 @@ clean:
 	rm -f dist/*
 
 release: test clean
-	python setup.py sdist bdist_wheel
+	python3 setup.py sdist bdist_wheel
 	@echo
 	@echo Upload to PyPI
-	@echo python -m twine upload dist/*
+	@echo twine upload dist/*
