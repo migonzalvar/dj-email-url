@@ -4,6 +4,13 @@ Change Log
 Unreleased
 ----------
 
+1.0.1_ - 2020-06-03
+-------------------
+
+.. _1.0.1: https://pypi.python.org/pypi/dj-email-url/1.0.1
+
+- Included LICENSE file in tarball. Thanks to @fabaff.
+
 1.0.0_ - 2020-02-16
 -------------------
 
