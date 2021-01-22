@@ -4,6 +4,8 @@ Change Log
 Unreleased
 ----------
 
+- Add support for Python 3.9 (@pauloxnet)
+
 1.0.1_ - 2020-06-03
 -------------------
 
