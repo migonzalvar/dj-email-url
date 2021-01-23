@@ -4,6 +4,11 @@ Change Log
 Unreleased
 ----------
 
+1.0.2_ - 2021-01-23
+-------------------
+
+.. _1.0.2: https://pypi.python.org/pypi/dj-email-url/1.0.2
+
 - Add support for Python 3.9 (@pauloxnet)
 
 1.0.1_ - 2020-06-03
