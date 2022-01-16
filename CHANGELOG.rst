@@ -4,7 +4,25 @@ Change Log
 Unreleased
 ----------
 
-- Add support for Python 3.10.
+1.0.4_ - 2022-01-16
+-------------------
+
+.. _1.0.4: https://pypi.python.org/pypi/dj-email-url/1.0.4
+
+
+- Post release version to update change log.
+
+1.0.3_ - 2022-01-16
+-------------------
+
+.. _1.0.3: https://pypi.python.org/pypi/dj-email-url/1.0.3
+
+- Added support for Python 3.10.
+
+- Changed continuos integration infrastructure from Travis to GitHub Actions.
+
+- Switched to PyPA build frontend.
+
 
 1.0.2_ - 2021-01-23
 -------------------
