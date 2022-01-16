@@ -2,6 +2,7 @@
 *.pyc
 .coverage
 .tox/
+.python-version
 build/*
 dist/*
 __pycache__
