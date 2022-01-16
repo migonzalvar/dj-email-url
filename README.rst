@@ -2,7 +2,7 @@
 dj-email-url |latest-version|
 =============================
 
-|python-support|
+|ci| |python-support|
 
 This utility is based on dj-database-url by Kenneth Reitz.
 
@@ -12,6 +12,10 @@ configure the email backend in a Django application.
 .. |latest-version| image:: https://img.shields.io/pypi/v/dj-email-url.svg
    :alt: Latest version on PyPI
    :target: https://pypi.org/project/dj-email-url/
+
+.. |ci| image:: https://github.com/migonzalvar/dj-email-url/workflows/CI/badge.svg
+    :alt: CI status
+
 .. |python-support| image:: https://img.shields.io/pypi/pyversions/dj-email-url.svg
    :target: https://pypi.python.org/pypi/dj-email-url
    :alt: Python versions
