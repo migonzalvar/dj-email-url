@@ -14,7 +14,8 @@ configure the email backend in a Django application.
    :target: https://pypi.org/project/dj-email-url/
 
 .. |ci| image:: https://github.com/migonzalvar/dj-email-url/workflows/CI/badge.svg
-    :alt: CI status
+   :alt: CI status
+   :target: https://github.com/migonzalvar/dj-email-url
 
 .. |python-support| image:: https://img.shields.io/pypi/pyversions/dj-email-url.svg
    :target: https://pypi.python.org/pypi/dj-email-url
