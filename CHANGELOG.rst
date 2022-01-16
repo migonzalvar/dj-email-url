@@ -4,6 +4,8 @@ Change Log
 Unreleased
 ----------
 
+- Add support for Python 3.10.
+
 1.0.2_ - 2021-01-23
 -------------------
 
