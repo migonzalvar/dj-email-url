@@ -20,6 +20,7 @@ setup(
                 'Django Application.',
     long_description=read_file('README.rst') + '\n'
                 + read_file('CHANGELOG.rst'),
+    long_description_content_type='text/x-rst',
     py_modules=['dj_email_url'],
     zip_safe=False,
     include_package_data=True,
