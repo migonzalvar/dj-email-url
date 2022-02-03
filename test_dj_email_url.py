@@ -20,6 +20,7 @@ class EmailTestSuite(unittest.TestCase):
         assert url['EMAIL_PORT'] == 587
         assert url['EMAIL_USE_TLS'] is True
         assert url['EMAIL_USE_SSL'] is False
+        assert url['EMAIL_TIMEOUT'] is None
 
     def test_console_parsing(self):
         url = 'console://'
@@ -33,6 +34,7 @@ class EmailTestSuite(unittest.TestCase):
         assert url['EMAIL_PORT'] is None
         assert url['EMAIL_USE_TLS'] is False
         assert url['EMAIL_USE_SSL'] is False
+        assert url['EMAIL_TIMEOUT'] is None
 
     def test_email_url(self):
         a = dj_email_url.config()
@@ -75,7 +77,7 @@ class EmailTestSuite(unittest.TestCase):
         assert url['EMAIL_USE_SSL'] is False
         assert url['EMAIL_USE_TLS'] is True
 
-    def test_smtp_backend_with_smpt_over_ssl(self):
+    def test_smtp_backend_with_smtp_over_ssl(self):
         url = 'smtp://user@domain.com:pass@smtp.example.com:465/?ssl=True'
         url = dj_email_url.parse(url)
         assert url['EMAIL_PORT'] == 465
@@ -114,6 +116,11 @@ class EmailTestSuite(unittest.TestCase):
         url = dj_email_url.parse(url)
         assert url['EMAIL_USE_SSL'] is False
         assert url['EMAIL_USE_TLS'] is False
+
+    def test_smtp_backend_with_timeout(self):
+        url = 'smtp://user@domain.com:pass@smtp.example.com:587/?timeout=10'
+        url = dj_email_url.parse(url)
+        assert url['EMAIL_TIMEOUT'] is 10
 
     def test_special_chars(self):
         url = 'smtp://user%21%40%23%245678:pass%25%5E%26%2A%28%29123@' \
