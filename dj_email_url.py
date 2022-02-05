@@ -75,6 +75,7 @@ def parse(url):
         'EMAIL_PORT': url.port,
         'EMAIL_USE_SSL': False,
         'EMAIL_USE_TLS': False,
+        'EMAIL_TIMEOUT': None,
     })
 
     if url.scheme in SCHEMES:
@@ -111,6 +112,10 @@ def parse(url):
         if qs['tls'][0] in TRUTHY:
             conf['EMAIL_USE_SSL'] = False
             conf['EMAIL_USE_TLS'] = True
+
+    # Timeout
+    if 'timeout' in qs:
+        conf['EMAIL_TIMEOUT'] = int(qs['timeout'][0])
 
     # From addresses
     if '_server_email' in qs:

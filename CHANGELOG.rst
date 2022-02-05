@@ -4,6 +4,9 @@ Change Log
 Unreleased
 ----------
 
+- Added support for the timeout setting.
+
+
 1.0.4_ - 2022-01-16
 -------------------
 
