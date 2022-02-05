@@ -120,7 +120,7 @@ class EmailTestSuite(unittest.TestCase):
     def test_smtp_backend_with_timeout(self):
         url = 'smtp://user@domain.com:pass@smtp.example.com:587/?timeout=10'
         url = dj_email_url.parse(url)
-        assert url['EMAIL_TIMEOUT'] is 10
+        assert url['EMAIL_TIMEOUT'] == 10
 
     def test_special_chars(self):
         url = 'smtp://user%21%40%23%245678:pass%25%5E%26%2A%28%29123@' \
