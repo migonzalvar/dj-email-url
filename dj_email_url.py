@@ -6,14 +6,6 @@ import warnings
 import urllib.parse
 
 
-# Register email schemes in URLs.
-urllib.parse.uses_netloc.append('smtp')
-urllib.parse.uses_netloc.append('console')
-urllib.parse.uses_netloc.append('file')
-urllib.parse.uses_netloc.append('memory')
-urllib.parse.uses_netloc.append('dummy')
-
-
 DEFAULT_ENV = 'EMAIL_URL'
 
 
