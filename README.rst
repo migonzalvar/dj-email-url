@@ -133,6 +133,18 @@ Do not forget to assign values to settings:
     DEFAULT_FROM_EMAIL = email_config.get('DEFAULT_FROM_EMAIL', 'webmaster@localhost')
 
 
+Other settings
+==============
+
+There are other settings available to set from query param.
+
++--------------------+-------------------------+-----------------------+
+| Setting            | Query parameter         | Comments              |
++====================+=========================+=======================+
+| EMAIL_TIMEOUT      | ``timeout``             | *New in v1.0.5*.      |
++--------------------+-------------------------+-----------------------+
+
+
 More info
 =========
 
