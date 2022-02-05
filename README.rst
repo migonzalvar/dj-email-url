@@ -113,7 +113,7 @@ Currently, `dj-email-url` supports:
 Set from email addresses
 ========================
 
-`dj-email-url` also supports to optionally specify origin email addreses.
+`dj-email-url` also supports to optionally specify origin email addresses.
 
 +--------------------+-------------------------+
 | Setting            | Query parameter         |
