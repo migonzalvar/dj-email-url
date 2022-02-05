@@ -4,6 +4,11 @@ Change Log
 Unreleased
 ----------
 
+1.0.5_ - 2022-02-05
+-------------------
+
+.. _1.0.5: https://pypi.python.org/pypi/dj-email-url/1.0.5
+
 - Added support for the timeout setting.
 
 
