@@ -1,6 +1,5 @@
 .. SPDX-FileCopyrightText: 2013-2022 Miguel Gonzalez <migonzalvar@gmail.com>
 ..
-.. SPDX-License-Identifier: BSD-2-Clause
 .. SPDX-License-Identifier: CC-BY-4.0
 
 Change Log
