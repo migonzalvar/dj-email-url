@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: dj-email-url
+Upstream-Contact: Miguel Gonzalez <migonzalvar@gmail.com>
+Source: https://github.com/migonzalvar/dj-email-url
+
+Files: setup.cfg
+Copyright: 2013-2022 Miguel Gonzalez <migonzalvar@gmail.com>
+License: BSD-2-Clause
