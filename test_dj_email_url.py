@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+
+# SPDX-FileCopyrightText: 2013-2022 Miguel Gonzalez <migonzalvar@gmail.com>
+#
+# SPDX-License-Identifier: BSD-2-Clause
+
 # -*- coding: utf-8 -*-
 
 import os

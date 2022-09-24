@@ -1,3 +1,8 @@
+.. SPDX-FileCopyrightText: 2013-2022 Miguel Gonzalez <migonzalvar@gmail.com>
+..
+.. SPDX-License-Identifier: BSD-2-Clause
+.. SPDX-License-Identifier: CC-BY-4.0
+
 =============================
 dj-email-url |latest-version|
 =============================
@@ -218,3 +223,16 @@ File backend
 
 The file backend is the only one which needs a path. The url path is store
 in ``EMAIL_FILE_PATH`` key.
+
+License
+=======
+
+This work is licensed under several licences.
+
+- All original source code is licensed under BSD-2-Clause.
+- All documentation is licensed under CC-BY-4.0.
+- Some configuration and data files are licensed under CC0-1.0.
+
+For more accurate information, check the individual files.
+
+You can check the compliance with [REUSE helper tool](https://github.com/fsfe/reuse-tool).

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2013-2022 Miguel Gonzalez <migonzalvar@gmail.com>
+#
+# SPDX-License-Identifier: BSD-2-Clause
+
 # -*- coding: utf-8 -*-
 """Packaging implementation"""
 from os.path import dirname, join
@@ -13,7 +17,7 @@ setup(
     name='dj-email-url',
     version='1.0.5',
     url='https://github.com/migonzalvar/dj-email-url',
-    license='BSD',
+    license='BSD-2-Clause AND CC-BY-4.0 AND CC0-1.0',
     author='Miguel Gonzalez',
     author_email='migonzalvar@gmail.com',
     description='Use an URL to configure email backend settings in your '
