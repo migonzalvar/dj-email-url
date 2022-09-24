@@ -8,6 +8,15 @@ Change Log
 Unreleased
 ----------
 
+1.0.6_ - 2022-09-24
+-------------------
+
+.. _1.0.6: https://pypi.python.org/pypi/dj-email-url/1.0.6
+
+- Remove unnecessary code (thanks @matthiask).
+
+- Improve license metadata. No changes on license itself.
+
 1.0.5_ - 2022-02-05
 -------------------
 
