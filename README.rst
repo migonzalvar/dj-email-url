@@ -235,4 +235,4 @@ This work is licensed under several licences.
 
 For more accurate information, check the individual files.
 
-You can check the compliance with [REUSE helper tool](https://github.com/fsfe/reuse-tool).
+You can check the compliance with `REUSE helper tool <https://github.com/fsfe/reuse-tool>`_.
