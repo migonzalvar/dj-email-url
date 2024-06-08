@@ -10,6 +10,8 @@ install:
   test -e {{python}} || python -m venv .venv
   {{python}} -m pip install --upgrade pip setuptools wheel
   {{python}} -m pip install docutils pygments
+
+requirements-build: install
   {{python}} -m pip install build twine check-wheel-contents
 
 release: clean test build
@@ -28,7 +30,7 @@ test: install
   {{python}} -m docutils README.rst --halt=info >/dev/null
   {{python}} -m docutils CHANGELOG.rst --halt=info >/dev/null
 
-build: install
+build: requirements-build
   {{python}} -m build --sdist --wheel .
   {{python}} -m check_wheel_contents dist/*.whl
 
