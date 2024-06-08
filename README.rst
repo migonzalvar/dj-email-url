@@ -223,6 +223,25 @@ File backend
 The file backend is the only one which needs a path. The url path is store
 in ``EMAIL_FILE_PATH`` key.
 
+
+Running the tests
+=================
+
+Fork, then clone the repo:
+
+.. code:: bash
+
+    git clone git@github.com:put-your-user-here/dj-email-url.git
+
+Then you can run the tests with the *just* command runner:
+
+.. code:: bash
+
+    just test
+
+If you don't have *just* installed,
+you can look in the ``justfile`` for the commands that are run.
+
 License
 =======
 
