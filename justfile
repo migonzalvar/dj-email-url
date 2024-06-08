@@ -7,7 +7,7 @@ python := ".venv/bin/python"
 default: test
 
 install:
-  python -m venv .venv
+  test -e {{python}} || python -m venv .venv
   {{python}} -m pip install --upgrade pip setuptools wheel
   {{python}} -m pip install docutils pygments
   {{python}} -m pip install build twine check-wheel-contents
