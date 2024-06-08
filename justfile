@@ -27,7 +27,6 @@ release: clean test build
 
 test: install
   {{python}} test_dj_email_url.py
-  {{python}} -m docutils README.rst --halt=info >/dev/null
   {{python}} -m docutils CHANGELOG.rst --halt=info >/dev/null
 
 build: requirements-build
@@ -35,5 +34,4 @@ build: requirements-build
   {{python}} -m check_wheel_contents dist/*.whl
 
 clean:
-  rm -f README.rst.html
   rm -f dist/*
