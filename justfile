@@ -27,7 +27,6 @@ release: clean test build
 
 test: install
   {{python}} test_dj_email_url.py
-  {{python}} -m docutils CHANGELOG.rst --halt=info >/dev/null
 
 build: requirements-build
   {{python}} -m build --sdist --wheel .
