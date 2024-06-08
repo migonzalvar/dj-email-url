@@ -2,5 +2,8 @@
 #
 # SPDX-License-Identifier: CC0-1.0
 
-[flake8]
-extend-exclude = .venv/
+repos:
+  - repo: https://github.com/fsfe/reuse-tool
+    rev: v3.1.0a1
+    hooks:
+      - id: reuse
