@@ -23,12 +23,12 @@ release: clean test build
 
 test: install
 	.venv/bin/python test_dj_email_url.py
-	.venv/bin/rst2html.py README.rst --halt=info >/dev/null
-	.venv/bin/rst2html.py CHANGELOG.rst --halt=info >/dev/null
+	.venv/bin/python -m docutils README.rst --halt=info >/dev/null
+	.venv/bin/python -m docutils CHANGELOG.rst --halt=info >/dev/null
 
 build: install
 	.venv/bin/python -m build --sdist --wheel .
-	.venv/bin/check-wheel-contents dist/*.whl
+	.venv/bin/python -m check_wheel_contents dist/*.whl
 
 clean:
 	rm -f README.rst.html
