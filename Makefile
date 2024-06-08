@@ -2,13 +2,15 @@
 #
 # SPDX-License-Identifier: CC0-1.0
 
+PYTHON := .venv/bin/python
+
 default: test
 
 install:
 	python -m venv .venv
-	.venv/bin/python -m pip install --upgrade pip setuptools wheel
-	.venv/bin/python -m pip install docutils pygments
-	.venv/bin/python -m pip install build twine check-wheel-contents
+	${PYTHON} -m pip install --upgrade pip setuptools wheel
+	${PYTHON} -m pip install docutils pygments
+	${PYTHON} -m pip install build twine check-wheel-contents
 
 release: clean test build
 	@echo Check:
@@ -22,13 +24,13 @@ release: clean test build
 	@echo '[ ] Upload to PyPI (twine upload dist/*).'
 
 test: install
-	.venv/bin/python test_dj_email_url.py
-	.venv/bin/python -m docutils README.rst --halt=info >/dev/null
-	.venv/bin/python -m docutils CHANGELOG.rst --halt=info >/dev/null
+	${PYTHON} test_dj_email_url.py
+	${PYTHON} -m docutils README.rst --halt=info >/dev/null
+	${PYTHON} -m docutils CHANGELOG.rst --halt=info >/dev/null
 
 build: install
-	.venv/bin/python -m build --sdist --wheel .
-	.venv/bin/python -m check_wheel_contents dist/*.whl
+	${PYTHON} -m build --sdist --wheel .
+	${PYTHON} -m check_wheel_contents dist/*.whl
 
 clean:
 	rm -f README.rst.html
