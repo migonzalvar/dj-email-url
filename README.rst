@@ -245,7 +245,7 @@ you can look in the ``justfile`` for the commands that are run.
 License
 =======
 
-This work is licensed under several licences.
+This work is licensed under several licenses.
 
 - All original source code is licensed under BSD-2-Clause.
 - All documentation is licensed under CC-BY-4.0.
