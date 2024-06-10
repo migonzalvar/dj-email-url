@@ -66,7 +66,9 @@ Currently, **dj-email-url** supports:
 | In-memory | `memory:`                                     |                 |
 | Dummy     | `dummy:`                                      |                 |
 
-> [!WARNING] WARNING: Using special characters on passwords
+> [!WARNING]
+> **Using special characters on passwords**
+> 
 > To use characters that have a special meaning in a URL (think of `&`)
 > you should use [percentencoding](https://en.wikipedia.org/wiki/Percent-encoding).
 >  For example, `m&m` would become `m%26m`.
@@ -122,8 +124,9 @@ is selected when the scheme in the URL is one of the following values:
 | `smtp`                   | 25           | Local mail transfer agent |
 | `submission` or `submit` | 587          | SMTP with STARTTLS        |
 
-> [!NOTE] NOTE
-> _Changed in version 0.1:_
+> [!NOTE]
+> _Changed in version 0.1_
+> 
 > The use of `smtps` is now [discouraged](https://en.wikipedia.org/wiki/SMTPS).
 > It was used to indicate to use TLS connections, that is to set `EMAIL_USE_TLS`to `True`.
 > Now is recommended to use `submission` or `submit`.
