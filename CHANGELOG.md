@@ -47,13 +47,12 @@
 
 - Added new schemes `submission` and `submit` to select SMTP backend
   on port 587 with STARTTLS. Thanks to \@LEW21 to suggest to include
-  new [submit]{.title-ref} URI.
+  new `submit` URI scheme.
 - Discouraged the use of scheme `smtps` and add a user warning. Thanks
   to \@LEW21 to alert about this confusing usage.
 - Expand which values are considered as truthy on a query string
-  param. Now, [1]{.title-ref}, [on]{.title-ref}, [true]{.title-ref},
-  and [yes]{.title-ref}, as a single character or in all case variants
-  (lower, upper and title case) are considered as [True]{.title-ref}.
+  parameter. Now, `1`, `on`, `true`, and `yes`, as a single character or in all case variants
+  (lower, upper and title case) are considered as `True`.
 
 ## [0.0.10](https://pypi.python.org/pypi/dj-email-url/0.0.10) - 2016-10-14
 
