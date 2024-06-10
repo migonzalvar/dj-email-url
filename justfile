@@ -8,10 +8,10 @@ default: test
 
 install:
   test -e {{python}} || python -m venv .venv
-  {{python}} -m pip install --upgrade pip setuptools wheel
+  {{python}} -m pip install --upgrade pip setuptools
 
 requirements-build: install
-  {{python}} -m pip install build twine check-wheel-contents
+  {{python}} -m pip install build twine
 
 release: clean test build
   @echo Check:
@@ -28,8 +28,7 @@ test: install
   {{python}} test_dj_email_url.py
 
 build: requirements-build
-  {{python}} -m build --sdist --wheel .
-  {{python}} -m check_wheel_contents dist/*.whl
+  {{python}} -m build --sdist .
 
 clean:
   rm -f dist/*
