@@ -2,13 +2,12 @@
 
 [![CI status](https://github.com/migonzalvar/dj-email-url/workflows/CI/badge.svg)](https://github.com/migonzalvar/dj-email-url)
 [![Python versions](https://img.shields.io/pypi/pyversions/dj-email-url.svg)](https://pypi.python.org/pypi/dj-email-url)
+[![License](https://img.shields.io/badge/License-BSD--2--Clause-red)](./LICENSE)
 
-This utility is based on dj-database-url by Kenneth Reitz.
+This package allows using an environment variable to configure the email backend in a Django application
+as described in [12factor](http://www.12factor.net/backing-services).
 
-It allows to utilize the
-[12factor](http://www.12factor.net/backing-services) inspired
-environments variable to configure the email backend in a Django
-application.
+It is the equivalent of dj-database-url, but for the email.
 
 ## Usage
 
@@ -18,14 +17,14 @@ Import the package in `settings.py`:
 import dj_email_url
 ```
 
-Fetch your email configuration values. The default option is fetch them
-from `EMAIL_URL` environment variable:
+Fetch your email configuration values.
+The default option is to fetch them from `EMAIL_URL` environment variable:
 
 ```python
 email_config = dj_email_url.config()
 ```
 
-Other option is parse an arbitrary email URL:
+Another option is to parse a string directly with an arbitrary email URL:
 
 ```python
 email_config = dj_email_url.parse('smtp://...')
@@ -55,20 +54,19 @@ vars().update(email_config)
 
 Currently, **dj-email-url** supports:
 
-| Backend   | `EMAIL_URL`                                    | Description                                                                                                    |
-| --------- | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| Console   | `console:`                                     | Writes to stdout (development)                                                                                 |
-| SMTP      | `smtp:`                                        | Sends using a mail transfer agent at localhost on port 25                                                      |
-| SMTP      | `submission://USER:PASSWORD@smtp.sendgrid.com` | Sends using [SendGrid](https://sendgrid.com/docs/Integrate/Frameworks/django.html) SMTP on port 587 (STARTTLS) |
-| File      | `file:`                                        | Writes to a file                                                                                               |
-| In-memory | `memory:`                                      |                                                                                                                |
-| Dummy     | `dummy:`                                       |                                                                                                                |
+| Backend   | `EMAIL_URL`                                   | Description     |
+| --------- | --------------------------------------------- | --------------- |
+| Console   | `console:`                                    | Write to stdout (development) |
+| SMTP      | `smtp:`                                       | Send to mail transfer agent at localhost on port 25 |
+| SMTP      | `submission://USER:PASSWORD@smtp.example.com` | Send to SMTP server on port 587 (STARTTLS) |
+| File      | `file:`                                       | Write to a file |
+| In-memory | `memory:`                                     |                 |
+| Dummy     | `dummy:`                                      |                 |
 
 > [!WARNING] WARNING: Using special characters on passwords
-> To use characters that have a special meaning in an URL (think of `&`)
-> you should use [percent
-> encoding](https://en.wikipedia.org/wiki/Percent-encoding). For example,
-> `m&m` would become `m%26m`.
+> To use characters that have a special meaning in a URL (think of `&`)
+> you should use [percentencoding](https://en.wikipedia.org/wiki/Percent-encoding).
+>  For example, `m&m` would become `m%26m`.
 >
 > Because the percent character itself (`%`) serves as the indicator for
 > percent-encoded octets, it must be percent-encoded as `%25`.
@@ -84,8 +82,7 @@ Currently, **dj-email-url** supports:
 
 ## Set from email addresses
 
-**dj-email-url** also supports to optionally specify origin
-email addresses.
+**dj-email-url** also supports to optionally specify origin email addresses.
 
 | Setting            | Query parameter       |
 | ------------------ | --------------------- |
@@ -104,7 +101,7 @@ DEFAULT_FROM_EMAIL = email_config.get('DEFAULT_FROM_EMAIL', 'webmaster@localhost
 
 ## Other settings
 
-There are other settings available to set from query param.
+There are other settings available to set from query parameters.
 
 | Setting       | Query parameter | Comments         |
 | ------------- | --------------- | ---------------- |
@@ -114,9 +111,8 @@ There are other settings available to set from query param.
 
 ### SMTP backend
 
-The [SMTP
-backend](https://docs.djangoproject.com/en/dev/topics/email/#smtp-backend)
-is selected when the scheme in the URL if one these:
+The [SMTP backend](https://docs.djangoproject.com/en/dev/topics/email/#smtp-backend)
+is selected when the scheme in the URL is one of the following values:
 
 | Value                    | Default port | Comment                   |
 | ------------------------ | ------------ | ------------------------- |
@@ -125,18 +121,14 @@ is selected when the scheme in the URL if one these:
 
 > [!NOTE] NOTE
 > _Changed in version 0.1:_
-> The use of `smtps` is now
-> [discouraged](https://en.wikipedia.org/wiki/SMTPS) The value `smtps` was
-> used to indicate to use TLS connections, that is to set `EMAIL_USE_TLS`
-> to `True`. Now is recommended to use `submission` or `submit` (see
-> [service name for port
-> numbers](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=587)
-> or [Uniform Resource Identifier
-> Schemes](https://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml)
-> at IANA).
+> The use of `smtps` is now [discouraged](https://en.wikipedia.org/wiki/SMTPS).
+> It was used to indicate to use TLS connections, that is to set `EMAIL_USE_TLS`to `True`.
+> Now is recommended to use `submission` or `submit`.
+>
+> See [service name for port numbers](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=587)
+> and [Uniform Resource Identifier Schemes](https://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml) at IANA for more details.
 
-On the most popular mail configuration option is to use a **third party
-SMTP server to relay emails**.
+On the most popular mail configuration option is to use a **third party SMTP server to relay emails**.
 
 ```pycon
 >>> url = 'submission://user@example.com:pass@smtp.example.com'
@@ -146,8 +138,8 @@ SMTP server to relay emails**.
 >>> assert url['EMAIL_USE_TLS'] is True
 ```
 
-Other common option is to use a **local mail transfer agent** Postfix or
-Exim. In this case it as easy as:
+Another common option is to use a **local mail transfer agent** as Postfix or Exim.
+In this case, it as easy as:
 
 ```pycon
 >>> url = 'smtp://'
@@ -159,10 +151,8 @@ Exim. In this case it as easy as:
 ```
 
 It is also possible to configure **SMTP-over-SSL** (usually on 465).
-This configuration is not generally recommended but might be needed for
-legacy systems. To apply use this configuration specify SSL using a
-[ssl=True]{.title-ref} as a query parameter and indicate the port
-explicitly:
+This configuration is not generally recommended, but might be needed for legacy systems.
+To use this protocol set `ssl=True` as a query parameter and indicate the port explicitly:
 
 ```pycon
 >>> url = 'smtp://user@domain.com:pass@smtp.example.com:465/?ssl=True'
@@ -174,8 +164,8 @@ explicitly:
 
 ### File backend
 
-The file backend is the only one which needs a path. The url path is
-store in `EMAIL_FILE_PATH` key.
+The file backend is the only one which needs a path.
+The URL's path is used as the `EMAIL_FILE_PATH` key.
 
 ## Running the tests
 
@@ -191,8 +181,12 @@ Then you can run the tests with the _just_ command runner:
 just test
 ```
 
-If you don\'t have _just_ installed, you can look in the `justfile` for
-the commands that are run.
+If you don't have _just_ installed, you can look in the `justfile` for the commands that are run.
+
+## Project links
+
+- **PyPI**: https://pypi.org/project/dj-email-url/
+- **Changelog**: https://github.com/migonzalvar/dj-email-url/blob/master/CHANGELOG.md
 
 ## License
 
@@ -204,5 +198,4 @@ This work is licensed under several licenses.
 
 For more accurate information, check the individual files.
 
-You can check the compliance with [REUSE helper
-tool](https://github.com/fsfe/reuse-tool).
+You can check the compliance with [REUSE helper tool](https://github.com/fsfe/reuse-tool).
