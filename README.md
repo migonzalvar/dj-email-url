@@ -1,3 +1,6 @@
+<!-- SPDX-FileCopyrightText: 2013-2022 Miguel Gonzalez <migonzalvar@gmail.com> -->
+<!-- SPDX-License-Identifier: CC-BY-4.0 -->
+
 # dj-email-url [![Latest version on PyPI](https://img.shields.io/pypi/v/dj-email-url.svg)](https://pypi.org/project/dj-email-url/)
 
 [![CI status](https://github.com/migonzalvar/dj-email-url/workflows/CI/badge.svg)](https://github.com/migonzalvar/dj-email-url)
