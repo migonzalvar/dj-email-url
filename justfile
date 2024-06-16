@@ -10,6 +10,9 @@ install:
   test -e {{python}} || python -m venv .venv
   {{python}} -m pip install --upgrade pip setuptools
 
+requirements-test: install
+  {{python}} -m pip install pytest
+
 requirements-build: install
   {{python}} -m pip install build twine
 
@@ -24,8 +27,8 @@ release: clean test build
   @echo ''
   @echo '[ ] Upload to PyPI (twine upload dist/*).'
 
-test: install
-  {{python}} test_dj_email_url.py
+test: requirements-test
+  {{python}} -m pytest
 
 build: requirements-build
   {{python}} -m build --sdist .

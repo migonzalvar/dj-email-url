@@ -32,3 +32,9 @@ classifiers = [
 
 [project.urls]
 Homepage = "https://github.com/migonzalvar/dj-email-url"
+
+[tool.check-wheel-contents]
+ignore = ["W007", "W008"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
